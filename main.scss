@@ -444,6 +444,12 @@ main {
 
 footer {
   background-color: $black;
+  @include for-desktop() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10rem;
+  }
   .footer_content {
     display: flex;
     flex-direction: column;
@@ -451,6 +457,9 @@ footer {
     align-items: center;
     padding: 7rem;
     gap: 3rem;
+    @include for-desktop() {
+      align-items: flex-start;
+    }
     ul {
       list-style-type: none;
       padding: 0;
@@ -463,6 +472,9 @@ footer {
       text-align: center;
       padding: 0;
       margin: 0;
+      @include for-desktop() {
+        flex-direction: row;
+      }
       a {
         color: $white;
         text-decoration: none;
@@ -477,7 +489,11 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
+    @include for-desktop() {
+      flex-direction: column;
+      align-items: flex-end;
+    }
     gap: 2rem;
     img {
       width: 3rem;
@@ -488,8 +504,20 @@ footer {
     text-align: center;
     color: $vDarkGray;
     font-family: $font-family-josefin;
-    margin-top: 1.5rem;
     font-size: 1.7rem;
     padding: 3rem;
+    @include for-desktop() {
+      padding: 1rem;
+      margin-top: 0;
+      text-align: right;
+      font-size: 2rem;
+    }
+  }
+}
+.extended__flex {
+  display: flex;
+  gap: 2rem;
+  @include for-desktop() {
+    flex-direction: row;
   }
 }
