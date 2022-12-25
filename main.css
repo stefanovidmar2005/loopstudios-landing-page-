@@ -536,7 +536,6 @@ footer .footer__copyright-description {
 @media (min-width: 1200px) {
   footer .footer__copyright-description {
     padding: 1rem;
-    margin-top: 0;
     text-align: right;
     font-size: 2rem;
   }
