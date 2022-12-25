@@ -263,6 +263,10 @@ main {
 }
 
 .second__article {
+  margin-bottom: 0;
+  @include for-desktop() {
+    margin-bottom: 15rem;
+  }
   .flex-cont {
     @include for-desktop() {
       display: flex;
@@ -302,7 +306,7 @@ main {
     padding: 2rem;
     @include for-desktop() {
       padding: 2rem 13rem;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       overflow: hidden;
       gap: 2rem;
     }
@@ -398,8 +402,8 @@ main {
       padding-left: 2rem;
       line-height: 1.1;
       @include for-desktop() {
-        padding-top: 38rem;
-        padding-left: 4rem;
+        padding-top: 35rem;
+        padding-inline: 5rem;
         font-size: 2.8rem;
       }
     }
@@ -413,6 +417,7 @@ main {
     display: block;
   }
 }
+
 .see-all {
   border: 2px solid #000;
   background-color: #fff;
@@ -423,10 +428,15 @@ main {
   letter-spacing: 5px;
   width: 60%;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
   @include for-desktop() {
     width: auto;
     margin-top: 0;
     padding: 0.7rem 3.5rem;
+  }
+  &:hover {
+    background-color: coral;
+    color: #fff;
   }
 }
 

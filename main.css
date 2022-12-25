@@ -252,6 +252,14 @@ main .first__article p {
   }
 }
 
+.second__article {
+  margin-bottom: 0;
+}
+@media (min-width: 1200px) {
+  .second__article {
+    margin-bottom: 15rem;
+  }
+}
 @media (min-width: 1200px) {
   .second__article .flex-cont {
     display: flex;
@@ -297,7 +305,7 @@ main .first__article p {
 @media (min-width: 1200px) {
   .second__article .cards {
     padding: 2rem 13rem;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     overflow: hidden;
     gap: 2rem;
   }
@@ -412,8 +420,8 @@ main .first__article p {
 }
 @media (min-width: 1200px) {
   .second__article .cards h4 {
-    padding-top: 38rem;
-    padding-left: 4rem;
+    padding-top: 35rem;
+    padding-inline: 5rem;
     font-size: 2.8rem;
   }
 }
@@ -439,6 +447,7 @@ main .first__article p {
   letter-spacing: 5px;
   width: 60%;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 @media (min-width: 1200px) {
   .see-all {
@@ -446,6 +455,10 @@ main .first__article p {
     margin-top: 0;
     padding: 0.7rem 3.5rem;
   }
+}
+.see-all:hover {
+  background-color: coral;
+  color: #fff;
 }
 
 footer {
