@@ -40,11 +40,11 @@
     </header>
 
     <main class="interactive-vr">
+      <div class="interactive__container">
+        <div class="interactive__image"></div>
+      </div>
+
       <article class="first__article">
-        <img
-          src="/images/mobile/image-interactive.jpg"
-          alt="person wearing a vr headset"
-        />
         <div class="first__article-content">
           <h2>The leader in interactive VR</h2>
           <p>
@@ -55,8 +55,13 @@
           </p>
         </div>
       </article>
+
       <article class="second__article">
-        <h3>Our creations</h3>
+        <div class="flex-cont">
+          <h3>Our creations</h3>
+          <button class="see-all hidden-1">See all</button>
+        </div>
+
         <div class="cards">
           <div class="card-1">
             <h4>Deep earth</h4>
@@ -83,7 +88,7 @@
             <h4>Make it fisheye</h4>
           </div>
           <div class="center">
-            <button class="see-all">See all</button>
+            <button class="see-all hidden-2">See all</button>
           </div>
         </div>
       </article>

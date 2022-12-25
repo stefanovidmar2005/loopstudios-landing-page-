@@ -75,23 +75,61 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+// Media query mixin for desktop browsers
+
+@mixin for-desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
 
 // Header section
-
 .header {
   background-image: url("/images/mobile/image-hero.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+  @include for-desktop() {
+    background-image: url("/images/desktop/image-hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
 
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 4rem 2.5rem;
+    @include for-desktop() {
+      padding: 4rem 13rem;
+    }
   }
   ul {
     display: none;
+    @include for-desktop() {
+      display: block;
+      list-style: none;
+    }
+    li {
+      @include for-desktop() {
+        display: flex;
+        gap: 3rem;
+      }
+    }
+    a {
+      @include for-desktop() {
+        text-decoration: none;
+        color: $white;
+        font-family: $font-family-alata;
+        transition: all 0.2s ease-in-out;
+        border-bottom: 2px solid transparent;
+      }
+    }
+    a:hover {
+      color: $black;
+      border-color: $black;
+    }
   }
   &__hamburger {
     position: relative;
@@ -99,6 +137,9 @@ h6 {
     width: 3rem;
     background-color: $white;
     cursor: pointer;
+    @include for-desktop() {
+      display: none;
+    }
   }
 
   .header__hamburger::before {
@@ -131,6 +172,22 @@ h6 {
     letter-spacing: 3px;
     line-height: 1.1;
     margin-top: 15rem;
+    @include for-desktop() {
+      margin: 0;
+      padding: 3rem;
+      letter-spacing: 5px;
+      font-weight: $fw-300;
+      font-family: $font-family-josefin;
+      font-size: 6rem;
+    }
+  }
+
+  .heading__flex {
+    @include for-desktop() {
+      padding: 4rem 13rem;
+      margin-top: 5rem;
+      margin-right: 35rem;
+    }
   }
 }
 
@@ -139,125 +196,237 @@ h6 {
 // Article 1
 
 main {
+  .interactive__container {
+    padding: 2rem;
+    margin-top: 8rem;
+    position: relative;
+    @include for-desktop() {
+      padding: 4rem 13rem;
+    }
+  }
+  .interactive__image {
+    background-image: url("/images/mobile/image-interactive.jpg");
+    display: block;
+    max-width: 100%;
+    height: 22.9617rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include for-desktop() {
+      background-image: url("/images/desktop/image-interactive.jpg");
+      height: 50rem;
+      max-width: 80%;
+      width: 73rem;
+    }
+  }
+
   .first__article {
     display: flex;
     flex-direction: column;
     padding: 2rem;
-    img {
-      margin-top: 8rem;
-      margin-bottom: 3.5rem;
+    @include for-desktop() {
     }
+
     .first__article-content {
       text-align: center;
       padding: 3rem;
-      h2 {
-        font-size: 2.7rem;
-        line-height: 1.1;
-        text-transform: uppercase;
-        font-family: $font-family-josefin;
-        font-weight: $fw-300;
-        letter-spacing: 3px;
-        margin-bottom: 2rem;
-      }
-      p {
-        font-family: $font-family-alata;
-        color: $darkGray;
+      @include for-desktop() {
+        background-color: #fff;
+        width: 50%;
+        padding: 8rem;
+        position: absolute;
+        top: 100rem;
+        right: 0rem;
       }
     }
-  }
-
-  .second__article {
-    h3 {
+    h2 {
+      font-size: 2.7rem;
+      line-height: 1.1;
       text-transform: uppercase;
-      text-align: center;
-      margin-top: 2rem;
-      margin-bottom: 5rem;
       font-family: $font-family-josefin;
       font-weight: $fw-300;
-      font-size: 2.7rem;
       letter-spacing: 3px;
+      margin-bottom: 2rem;
+      @include for-desktop() {
+        text-align: left;
+        font-size: 4rem;
+      }
     }
-    .cards {
-      display: grid;
-      padding: 2rem;
-      .card-1 {
-        background-image: url("/images/mobile/image-deep-earth.jpg");
-        background-size: cover;
+    p {
+      font-family: $font-family-alata;
+      color: $darkGray;
+      @include for-desktop() {
+        text-align: left;
+      }
+    }
+  }
+}
 
-        height: 20vh;
-        margin-bottom: 2rem;
+.second__article {
+  .flex-cont {
+    @include for-desktop() {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4rem 13rem;
+    }
+  }
+  .hidden-1 {
+    display: none;
+    @include for-desktop() {
+      display: block;
+    }
+  }
+  .hidden-2 {
+    @include for-desktop() {
+      display: none;
+    }
+  }
+  h3 {
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    font-family: $font-family-josefin;
+    font-weight: $fw-300;
+    font-size: 2.7rem;
+    letter-spacing: 3px;
+    @include for-desktop() {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 3.7rem;
+    }
+  }
+  .cards {
+    display: grid;
+    padding: 2rem;
+    @include for-desktop() {
+      padding: 2rem 13rem;
+      grid-template-columns: repeat(4, 1fr);
+      overflow: hidden;
+      gap: 2rem;
+    }
+    .card-1 {
+      background-image: url("/images/mobile/image-deep-earth.jpg");
+      background-size: cover;
+      height: 20vh;
+      margin-bottom: 2rem;
+      @include for-desktop() {
+        height: 65vh;
+        background-image: url("/images/desktop/image-deep-earth.jpg");
       }
-      .card-2 {
-        background-image: url("/images/mobile/image-night-arcade.jpg");
-        background-size: cover;
-        height: 20vh;
-        margin-bottom: 2rem;
+    }
+    .card-2 {
+      background-image: url("/images/mobile/image-night-arcade.jpg");
+      background-size: cover;
+      height: 20vh;
+      margin-bottom: 2rem;
+      @include for-desktop() {
+        height: 65vh;
+        background-image: url("/images/desktop/image-night-arcade.jpg");
       }
-      .card-3 {
-        background-image: url("/images/mobile/image-soccer-team.jpg");
-        background-size: cover;
-        height: 20vh;
-        margin-bottom: 2rem;
+    }
+    .card-3 {
+      background-image: url("/images/mobile/image-soccer-team.jpg");
+      background-size: cover;
+      height: 20vh;
+      margin-bottom: 2rem;
+      @include for-desktop() {
+        height: 65vh;
+        background-image: url("/images/desktop/image-soccer-team.jpg");
       }
-      .card-4 {
-        background-image: url("/images/mobile/image-grid.jpg");
-        background-size: cover;
-        height: 20vh;
-        margin-bottom: 2rem;
+    }
+    .card-4 {
+      background-image: url("/images/mobile/image-grid.jpg");
+      background-size: cover;
+      height: 20vh;
+      margin-bottom: 2rem;
+      @include for-desktop() {
+        height: 65vh;
+        background-image: url("/images/desktop/image-grid.jpg");
       }
-      .card-5 {
-        background-image: url("/images/mobile/image-from-above.jpg");
-        background-size: cover;
-        height: 20vh;
-        margin-bottom: 2rem;
+    }
+    .card-5 {
+      background-image: url("/images/mobile/image-from-above.jpg");
+      background-size: cover;
+      height: 20vh;
+      margin-bottom: 2rem;
+      @include for-desktop() {
+        height: 65vh;
+        background-image: url("/images/desktop/image-from-above.jpg");
       }
-      .card-6 {
-        background-image: url("/images/mobile/image-pocket-borealis.jpg");
-        background-size: cover;
-        height: 20vh;
-        margin-bottom: 2rem;
+    }
+    .card-6 {
+      background-image: url("/images/mobile/image-pocket-borealis.jpg");
+      background-size: cover;
+      height: 20vh;
+      margin-bottom: 2rem;
+      @include for-desktop() {
+        height: 65vh;
+        background-image: url("/images/desktop/image-pocket-borealis.jpg");
       }
-      .card-7 {
-        background-image: url("/images/mobile/image-curiosity.jpg");
-        background-size: cover;
-        height: 20vh;
-        margin-bottom: 2rem;
+    }
+    .card-7 {
+      background-image: url("/images/mobile/image-curiosity.jpg");
+      background-size: cover;
+      height: 20vh;
+      margin-bottom: 2rem;
+      @include for-desktop() {
+        height: 65vh;
+        background-image: url("/images/desktop/image-curiosity.jpg");
       }
-      .card-8 {
-        background-image: url("/images/mobile/image-fisheye.jpg");
-        background-size: cover;
-        height: 20vh;
-        margin-bottom: 2rem;
+    }
+    .card-8 {
+      background-image: url("/images/mobile/image-fisheye.jpg");
+      background-size: cover;
+      height: 20vh;
+      margin-bottom: 2rem;
+      @include for-desktop() {
+        height: 65vh;
+        background-image: url("/images/desktop/image-fisheye.jpg");
       }
-      h4 {
-        color: #fff;
-        font-size: 2.5rem;
-        font-family: $font-family-josefin;
-        text-transform: uppercase;
-        font-weight: $fw-300;
-        letter-spacing: 3px;
-        padding-top: 5rem;
-        padding-right: 15rem;
-        padding-left: 2rem;
-        line-height: 1.1;
+    }
+    h4 {
+      color: #fff;
+      font-size: 2.5rem;
+      font-family: $font-family-josefin;
+      text-transform: uppercase;
+      font-weight: $fw-300;
+      letter-spacing: 3px;
+      padding-top: 5rem;
+      padding-right: 15rem;
+      padding-left: 2rem;
+      line-height: 1.1;
+      @include for-desktop() {
+        padding-top: 38rem;
+        padding-left: 4rem;
+        font-size: 2.8rem;
       }
     }
   }
-  .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include for-desktop() {
+    display: block;
   }
-  .see-all {
-    border: 2px solid #000;
-    background-color: #fff;
-    text-transform: uppercase;
-    font-family: $font-family-alata;
-    padding: 1.5rem 4rem;
-    margin-top: 2rem;
-    letter-spacing: 5px;
-    width: 60%;
-    cursor: pointer;
+}
+.see-all {
+  border: 2px solid #000;
+  background-color: #fff;
+  text-transform: uppercase;
+  font-family: $font-family-alata;
+  padding: 1.5rem 4rem;
+  margin-top: 2rem;
+  letter-spacing: 5px;
+  width: 60%;
+  cursor: pointer;
+  @include for-desktop() {
+    width: auto;
+    margin-top: 0;
+    padding: 0.7rem 3.5rem;
   }
 }
 

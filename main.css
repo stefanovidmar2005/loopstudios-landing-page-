@@ -75,14 +75,52 @@ h6 {
   background-repeat: no-repeat;
   height: 100vh;
 }
+@media (min-width: 1200px) {
+  .header {
+    background-image: url("/images/desktop/image-hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+}
 .header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 4rem 2.5rem;
 }
+@media (min-width: 1200px) {
+  .header nav {
+    padding: 4rem 13rem;
+  }
+}
 .header ul {
   display: none;
+}
+@media (min-width: 1200px) {
+  .header ul {
+    display: block;
+    list-style: none;
+  }
+}
+@media (min-width: 1200px) {
+  .header ul li {
+    display: flex;
+    gap: 3rem;
+  }
+}
+@media (min-width: 1200px) {
+  .header ul a {
+    text-decoration: none;
+    color: hsl(0deg, 0%, 100%);
+    font-family: "Alata", sans-serif;
+    transition: all 0.2s ease-in-out;
+    border-bottom: 2px solid transparent;
+  }
+}
+.header ul a:hover {
+  color: hsl(0deg, 0%, 0%);
+  border-color: hsl(0deg, 0%, 0%);
 }
 .header__hamburger {
   position: relative;
@@ -90,6 +128,11 @@ h6 {
   width: 3rem;
   background-color: hsl(0deg, 0%, 100%);
   cursor: pointer;
+}
+@media (min-width: 1200px) {
+  .header__hamburger {
+    display: none;
+  }
 }
 .header .header__hamburger::before {
   content: " ";
@@ -120,21 +163,71 @@ h6 {
   line-height: 1.1;
   margin-top: 15rem;
 }
+@media (min-width: 1200px) {
+  .header h1 {
+    margin: 0;
+    padding: 3rem;
+    letter-spacing: 5px;
+    font-weight: 300;
+    font-family: "Josefin", sans-serif;
+    font-size: 6rem;
+  }
+}
+@media (min-width: 1200px) {
+  .header .heading__flex {
+    padding: 4rem 13rem;
+    margin-top: 5rem;
+    margin-right: 35rem;
+  }
+}
 
+main .interactive__container {
+  padding: 2rem;
+  margin-top: 8rem;
+  position: relative;
+}
+@media (min-width: 1200px) {
+  main .interactive__container {
+    padding: 4rem 13rem;
+  }
+}
+main .interactive__image {
+  background-image: url("/images/mobile/image-interactive.jpg");
+  display: block;
+  max-width: 100%;
+  height: 22.9617rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (min-width: 1200px) {
+  main .interactive__image {
+    background-image: url("/images/desktop/image-interactive.jpg");
+    height: 50rem;
+    max-width: 80%;
+    width: 73rem;
+  }
+}
 main .first__article {
   display: flex;
   flex-direction: column;
   padding: 2rem;
 }
-main .first__article img {
-  margin-top: 8rem;
-  margin-bottom: 3.5rem;
-}
 main .first__article .first__article-content {
   text-align: center;
   padding: 3rem;
 }
-main .first__article .first__article-content h2 {
+@media (min-width: 1200px) {
+  main .first__article .first__article-content {
+    background-color: #fff;
+    width: 50%;
+    padding: 8rem;
+    position: absolute;
+    top: 100rem;
+    right: 0rem;
+  }
+}
+main .first__article h2 {
   font-size: 2.7rem;
   line-height: 1.1;
   text-transform: uppercase;
@@ -143,11 +236,44 @@ main .first__article .first__article-content h2 {
   letter-spacing: 3px;
   margin-bottom: 2rem;
 }
-main .first__article .first__article-content p {
+@media (min-width: 1200px) {
+  main .first__article h2 {
+    text-align: left;
+    font-size: 4rem;
+  }
+}
+main .first__article p {
   font-family: "Alata", sans-serif;
   color: hsl(0deg, 0%, 55%);
 }
-main .second__article h3 {
+@media (min-width: 1200px) {
+  main .first__article p {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  .second__article .flex-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 13rem;
+  }
+}
+.second__article .hidden-1 {
+  display: none;
+}
+@media (min-width: 1200px) {
+  .second__article .hidden-1 {
+    display: block;
+  }
+}
+@media (min-width: 1200px) {
+  .second__article .hidden-2 {
+    display: none;
+  }
+}
+.second__article h3 {
   text-transform: uppercase;
   text-align: center;
   margin-top: 2rem;
@@ -157,59 +283,122 @@ main .second__article h3 {
   font-size: 2.7rem;
   letter-spacing: 3px;
 }
-main .second__article .cards {
+@media (min-width: 1200px) {
+  .second__article h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 3.7rem;
+  }
+}
+.second__article .cards {
   display: grid;
   padding: 2rem;
 }
-main .second__article .cards .card-1 {
+@media (min-width: 1200px) {
+  .second__article .cards {
+    padding: 2rem 13rem;
+    grid-template-columns: repeat(4, 1fr);
+    overflow: hidden;
+    gap: 2rem;
+  }
+}
+.second__article .cards .card-1 {
   background-image: url("/images/mobile/image-deep-earth.jpg");
   background-size: cover;
   height: 20vh;
   margin-bottom: 2rem;
 }
-main .second__article .cards .card-2 {
+@media (min-width: 1200px) {
+  .second__article .cards .card-1 {
+    height: 65vh;
+    background-image: url("/images/desktop/image-deep-earth.jpg");
+  }
+}
+.second__article .cards .card-2 {
   background-image: url("/images/mobile/image-night-arcade.jpg");
   background-size: cover;
   height: 20vh;
   margin-bottom: 2rem;
 }
-main .second__article .cards .card-3 {
+@media (min-width: 1200px) {
+  .second__article .cards .card-2 {
+    height: 65vh;
+    background-image: url("/images/desktop/image-night-arcade.jpg");
+  }
+}
+.second__article .cards .card-3 {
   background-image: url("/images/mobile/image-soccer-team.jpg");
   background-size: cover;
   height: 20vh;
   margin-bottom: 2rem;
 }
-main .second__article .cards .card-4 {
+@media (min-width: 1200px) {
+  .second__article .cards .card-3 {
+    height: 65vh;
+    background-image: url("/images/desktop/image-soccer-team.jpg");
+  }
+}
+.second__article .cards .card-4 {
   background-image: url("/images/mobile/image-grid.jpg");
   background-size: cover;
   height: 20vh;
   margin-bottom: 2rem;
 }
-main .second__article .cards .card-5 {
+@media (min-width: 1200px) {
+  .second__article .cards .card-4 {
+    height: 65vh;
+    background-image: url("/images/desktop/image-grid.jpg");
+  }
+}
+.second__article .cards .card-5 {
   background-image: url("/images/mobile/image-from-above.jpg");
   background-size: cover;
   height: 20vh;
   margin-bottom: 2rem;
 }
-main .second__article .cards .card-6 {
+@media (min-width: 1200px) {
+  .second__article .cards .card-5 {
+    height: 65vh;
+    background-image: url("/images/desktop/image-from-above.jpg");
+  }
+}
+.second__article .cards .card-6 {
   background-image: url("/images/mobile/image-pocket-borealis.jpg");
   background-size: cover;
   height: 20vh;
   margin-bottom: 2rem;
 }
-main .second__article .cards .card-7 {
+@media (min-width: 1200px) {
+  .second__article .cards .card-6 {
+    height: 65vh;
+    background-image: url("/images/desktop/image-pocket-borealis.jpg");
+  }
+}
+.second__article .cards .card-7 {
   background-image: url("/images/mobile/image-curiosity.jpg");
   background-size: cover;
   height: 20vh;
   margin-bottom: 2rem;
 }
-main .second__article .cards .card-8 {
+@media (min-width: 1200px) {
+  .second__article .cards .card-7 {
+    height: 65vh;
+    background-image: url("/images/desktop/image-curiosity.jpg");
+  }
+}
+.second__article .cards .card-8 {
   background-image: url("/images/mobile/image-fisheye.jpg");
   background-size: cover;
   height: 20vh;
   margin-bottom: 2rem;
 }
-main .second__article .cards h4 {
+@media (min-width: 1200px) {
+  .second__article .cards .card-8 {
+    height: 65vh;
+    background-image: url("/images/desktop/image-fisheye.jpg");
+  }
+}
+.second__article .cards h4 {
   color: #fff;
   font-size: 2.5rem;
   font-family: "Josefin", sans-serif;
@@ -221,12 +410,26 @@ main .second__article .cards h4 {
   padding-left: 2rem;
   line-height: 1.1;
 }
-main .center {
+@media (min-width: 1200px) {
+  .second__article .cards h4 {
+    padding-top: 38rem;
+    padding-left: 4rem;
+    font-size: 2.8rem;
+  }
+}
+
+.center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main .see-all {
+@media (min-width: 1200px) {
+  .center {
+    display: block;
+  }
+}
+
+.see-all {
   border: 2px solid #000;
   background-color: #fff;
   text-transform: uppercase;
@@ -236,6 +439,13 @@ main .see-all {
   letter-spacing: 5px;
   width: 60%;
   cursor: pointer;
+}
+@media (min-width: 1200px) {
+  .see-all {
+    width: auto;
+    margin-top: 0;
+    padding: 0.7rem 3.5rem;
+  }
 }
 
 footer {
