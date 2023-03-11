@@ -181,10 +181,27 @@ h6 {
   }
 }
 
+main {
+  transition: all 1s ease-in-out;
+  /* opacity: 0; */
+}
+
 main .interactive__container {
+  transition: all 1s ease-in-out;
   padding: 2rem;
   margin-top: 8rem;
   position: relative;
+  transform: translateY(0);
+}
+.interactive__container-hidden {
+  transform: translateY(30rem) !important;
+}
+.interactive-hidden {
+  opacity: 0;
+}
+.text-hidden {
+  transition: all 1s ease-in-out;
+  transform: translateX(-15rem) !important;
 }
 @media (min-width: 1200px) {
   main .interactive__container {
@@ -214,8 +231,10 @@ main .first__article {
   padding: 2rem;
 }
 main .first__article .first__article-content {
+  transition: all 0.8s ease-in-out;
   text-align: center;
   padding: 3rem;
+  transform: translateX(0);
 }
 @media (min-width: 1200px) {
   main .first__article .first__article-content {
@@ -266,8 +285,16 @@ main .first__article p {
     justify-content: space-between;
     align-items: center;
     padding: 4rem 13rem;
+    transform: translateY(0);
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
+  }
+  .header-hidden {
+    opacity: 0 !important;
+    transform: translateY(6rem) !important;
   }
 }
+
 .second__article .hidden-1 {
   display: none;
 }
@@ -303,11 +330,24 @@ main .first__article p {
   padding: 2rem;
 }
 @media (min-width: 1200px) {
+  .card {
+    transition: all 1s ease-in-out;
+  }
   .second__article .cards {
     padding: 2rem 13rem;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     overflow: hidden;
     gap: 2rem;
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .card-left-hidden {
+    opacity: 0 !important;
+    transform: translateX(-25rem) !important;
+  }
+  .card-right-hidden {
+    opacity: 0 !important;
+    transform: translateX(25rem) !important;
   }
 }
 .second__article .cards .card-1 {
@@ -470,6 +510,11 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 0 10rem;
+    transform: translateY(0);
+    transition: all 0.5s ease-in-out;
+  }
+  .footer__content-hidden {
+    transform: translateY(6rem);
   }
 }
 footer .footer_content {
@@ -483,6 +528,7 @@ footer .footer_content {
 @media (min-width: 1200px) {
   footer .footer_content {
     align-items: flex-start;
+    transform: translateX(0);
   }
 }
 footer .footer_content ul {
@@ -549,4 +595,4 @@ footer .footer__copyright-description {
   .extended__flex {
     flex-direction: row;
   }
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */
