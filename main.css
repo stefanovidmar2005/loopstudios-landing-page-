@@ -281,8 +281,8 @@ main .first__article p {
 }
 @media (min-width: 1200px) {
   .second__article .flex-cont {
-    display: flex;
-    justify-content: space-between;
+        display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 4rem 13rem;
     transform: translateY(0);
@@ -485,7 +485,7 @@ main .first__article p {
   padding: 1.5rem 4rem;
   margin-top: 2rem;
   letter-spacing: 5px;
-  width: 60%;
+  text-align:center;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
